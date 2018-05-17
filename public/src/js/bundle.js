@@ -26891,17 +26891,9 @@ var _PrivateRoute = __webpack_require__(136);
 
 var _PrivateRoute2 = _interopRequireDefault(_PrivateRoute);
 
-var _Login = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./login/Login.react\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var _Welcome = __webpack_require__(141);
 
-var _Login2 = _interopRequireDefault(_Login);
-
-var _Home = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./home/Home.react\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
-var _Home2 = _interopRequireDefault(_Home);
-
-var _Chat = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./chat/Chat.react\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
-var _Chat2 = _interopRequireDefault(_Chat);
+var _Welcome2 = _interopRequireDefault(_Welcome);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26909,9 +26901,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 React Ethereal - 2018
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 Main Content APP
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               */
 
-/* rutes */
+/* routes */
+
+
+/* run welcome */
 
 
 var App = function (_React$Component) {
@@ -26927,15 +26926,10 @@ var App = function (_React$Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'div',
-        { id: '_chat-main' },
-        _react2.default.createElement(
-          _reactRouter.Switch,
-          null,
-          _react2.default.createElement(_reactRouter.Route, { path: '/login', component: _Login2.default }),
-          _react2.default.createElement(_PrivateRoute2.default, { exact: true, path: '/', component: _Chat2.default }),
-          _react2.default.createElement(_PrivateRoute2.default, { path: '/test', component: _Home2.default })
-        )
+        _reactRouter.Switch,
+        null,
+        _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Welcome2.default }),
+        _react2.default.createElement(_PrivateRoute2.default, { exact: true, path: '/locked' })
       );
     }
   }]);
@@ -27159,6 +27153,75 @@ var authReducer = function authReducer() {
 };
 
 exports.default = authReducer;
+
+/***/ }),
+/* 141 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = __webpack_require__(8);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 Welcome to React ethera, a stater-kit for React based on Redux
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 Here are your react and redux code, ready to code
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+/* here main dependencies */
+
+
+/*  here class render */
+var Welcome = function (_React$Component) {
+  _inherits(Welcome, _React$Component);
+
+  function Welcome() {
+    _classCallCheck(this, Welcome);
+
+    return _possibleConstructorReturn(this, (Welcome.__proto__ || Object.getPrototypeOf(Welcome)).call(this));
+  }
+
+  /* render */
+
+
+  _createClass(Welcome, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        'Welcome to React Ethereal,  This is my first commit, if you wanna help just send me a message to',
+        _react2.default.createElement(
+          'a',
+          { href: 'mailto:fyara014@gmail.com' },
+          'fyara014@gmail.com'
+        )
+      );
+    }
+  }]);
+
+  return Welcome;
+}(_react2.default.Component);
+
+exports.default = Welcome;
 
 /***/ })
 /******/ ]);

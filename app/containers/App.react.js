@@ -7,8 +7,11 @@
 import React from 'react';
 import {Route, Switch} from 'react-router';
 
-/* rutes */
+/* routes */
 import PrivateRoute from './session/PrivateRoute.react';
+
+/* run welcome */
+import Welcome from './welcome/Welcome.react';
 
 class App extends React.Component {
   constructor() {
@@ -16,13 +19,13 @@ class App extends React.Component {
   }
 
   render() {
-    return (<div id="_chat-main">
+    return (
 
       <Switch>
-        <Route path="/welcome" component={Login}/>
-        <PrivateRoute exact={true} path="/" component={Chat}/>
+        <Route path="/" component={Welcome}/>
+        <PrivateRoute exact={true} path="/locked"/>
       </Switch>
-    </div>)
+    )
   }
 }
 

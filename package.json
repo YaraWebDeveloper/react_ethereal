@@ -52,15 +52,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://feryara@bitbucket.org/feryara/react_ethereal.git"
+    "url": "git+https://github.com/YaraWebDeveloper/react_ethereal"
   },
   "keywords": [
     "architecture",
     "react",
-    "reflux",
-    "keos_co"
+    "redux"
   ],
   "author": "Fernando Yara",
   "license": "MIT licensed",
-  "homepage": "https://bitbucket.org/feryara/react_ethereal#readme"
+  "homepage": "https://github.com/YaraWebDeveloper/react_ethereal"
 }
