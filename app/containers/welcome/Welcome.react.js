@@ -32,7 +32,18 @@ class Welcome extends React.Component {
             </h2>
           </div>
         </div>
-        <div class="hero-foot">Enjoy the ride, love the ending</div>
+        <div className="hero-foot">
+          Enjoy the ride, love the ending
+          <br />
+          <a href="https://bulma.io">
+            <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24"/>
+          </a>
+        </div>
+
+        <a href="https://github.com/YaraWebDeveloper/react_ethereal" target="_blank"><img style={{
+        position: 'absolute',
+         top: 0, right: 0, border: 0
+        }} src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub" /></a>
       </section>
 
     )
