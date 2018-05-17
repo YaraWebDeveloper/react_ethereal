@@ -27206,13 +27206,49 @@ var Welcome = function (_React$Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'div',
-        null,
-        'Welcome to React Ethereal,  This is my first commit, if you wanna help just send me a message to',
+        'section',
+        { 'class': 'hero is-fullheight is-light is-bold has-text-centered' },
         _react2.default.createElement(
-          'a',
-          { href: 'mailto:fyara014@gmail.com' },
-          'fyara014@gmail.com'
+          'div',
+          { 'class': 'hero-head' },
+          _react2.default.createElement(
+            'small',
+            null,
+            'if you wanna help, send me a mail to ',
+            _react2.default.createElement(
+              'a',
+              { href: 'mailto:fyara014@gmail.com' },
+              'fyara014@gmail.com'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { 'class': 'hero-body' },
+          _react2.default.createElement(
+            'div',
+            { 'class': 'container' },
+            _react2.default.createElement(
+              'h1',
+              { 'class': 'title' },
+              'Welcome to ',
+              _react2.default.createElement(
+                'strong',
+                { className: 'has-text-success' },
+                'React Ethereal'
+              )
+            ),
+            _react2.default.createElement(
+              'h2',
+              { 'class': 'subtitle' },
+              'a simple starter-kit ReactJs and Redux'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { 'class': 'hero-foot' },
+          'Enjoy the ride, love the ending'
         )
       );
     }

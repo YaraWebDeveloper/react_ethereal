@@ -31,7 +31,7 @@ Ethereal is a simple starter-kit built in [ReactJS](https://reactjs.org/) based 
 * React Redux
 * Redux Thunk
 * Redux Logger
-* Redux DEVTools Extention
+* Redux DEVTools Extension
 * History
 * Gulp (see `.gulpfile`)
 * Webpack (see `webpack.config.js`)
@@ -43,8 +43,7 @@ Ethereal is a simple starter-kit built in [ReactJS](https://reactjs.org/) based 
 - Testing
 
 
-License
-----
+## License
 MIT
 ---
 **Enjoy the ride, love the ending**
