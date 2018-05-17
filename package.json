@@ -1,0 +1,66 @@
+{
+  "name": "react_ethereal",
+  "version": "0.0.1",
+  "description": "A simple architecture based react and reflux",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm run build && node server.js",
+    "build": "webpack && gulp",
+    "build:dev": "NODE_WATCH=true gulp"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "bulma": "^0.6.2",
+    "express": "^4.16.2",
+    "fs": "^0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^3.4.0",
+    "gulp-minify": "^2.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace-task": "^0.11.0",
+    "history": "^4.7.2",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "less-plugin-clean-css": "^1.5.1",
+    "merge-stream": "^1.0.1",
+    "path": "^0.12.7",
+    "react": "^16.2.0",
+    "react-cookie": "^2.1.2",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "reflux": "^6.4.1"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^3.10.0",
+    "uglifyjs-webpack-plugin": "^1.1.6",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://feryara@bitbucket.org/feryara/react_ethereal.git"
+  },
+  "keywords": [
+    "architecture",
+    "react",
+    "reflux",
+    "keos_co"
+  ],
+  "author": "Fernando Yara",
+  "license": "MIT licensed",
+  "homepage": "https://bitbucket.org/feryara/react_ethereal#readme"
+}
