@@ -12,7 +12,23 @@ module.exports = {
     filename: "bundle.js",
     publicPath: "/"
   },
-
+  mode: (global.enviroment == 'prod')
+    ? 'production'
+    : 'development',
+  optimization: {
+    minimizer: global.enviroment == 'prod'
+      ? [new UglifyJSPlugin({
+          cache: true,
+          parallel: true,
+          uglifyOptions: {
+            compress: false,
+            ecma: 6,
+            mangle: true
+          },
+          sourceMap: true
+        })]
+      : []
+  },
   plugins: global.enviroment == 'prod'
     ? [
       new webpack.DefinePlugin({
@@ -20,20 +36,21 @@ module.exports = {
           NODE_ENV: JSON.stringify("production")
         }
       }),
-      new webpack.optimize.OccurrenceOrderPlugin(),
-      new webpack.optimize.UglifyJsPlugin()
+      new webpack.optimize.OccurrenceOrderPlugin()
     ]
     : [],
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env', 'react', 'stage-1'],
+            presets: [
+              'env', 'react', 'stage-1'
+            ],
             plugins: ["transform-class-properties"]
           }
         }

@@ -1,1 +1,6 @@
 node_modules/
+public/src/js/bundle.js
+public/dist/css/styles.min.css
+public/dist/js/all_dist.js
+.idea/
+v8-compile-cache-0/

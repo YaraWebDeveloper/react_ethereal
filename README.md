@@ -44,6 +44,7 @@ Ethereal is a simple starter-kit built in [ReactJS](https://reactjs.org/) based 
 
 
 ## License
-MIT
+- MIT
 ---
 **Enjoy the ride, love the ending**
+by [YaraWebDeveloper](https://github.com/YaraWebDeveloper/react_ethereal)

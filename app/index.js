@@ -2,8 +2,8 @@
 import '../system/system';
 import React from 'react'
 import {render} from 'react-dom'
-import {connect, Provider} from 'react-redux'
-import {ConnectedRouter, routerReducer, routerMiddleware, push} from 'react-router-redux'
+import {connect, Provider} from 'react-redux';
+import {ConnectedRouter, routerReducer, routerMiddleware, push} from 'react-router-redux';
 import thunk from 'redux-thunk';
 import {createLogger} from 'redux-logger';
 import {createStore, applyMiddleware, combineReducers, compose} from 'redux';
@@ -27,6 +27,7 @@ const store = createStore(rootReducer, {
   routerReducer: {},
   main: {}
 }, composeEnhancers(applyMiddleware(...middleware)));
+
 
 /* render app */
 render(<Provider store={store}>

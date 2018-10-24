@@ -3,10 +3,10 @@ var _system = require('./system/system.js');
 var gulp = require('gulp');
 var path = require('path');
 var concat = require('gulp-concat');
-var minify = require('gulp-minify');
+var minify = require('gulp-uglify');
 var replace = require('gulp-replace-task');
 var rename = require('gulp-rename');
-var minifyCss = require('gulp-minify-css');
+var minifyCss = require('gulp-clean-css');
 var merge = require('merge-stream');
 var less = require('gulp-less');
 
@@ -17,12 +17,7 @@ gulp.task('compile-js', function() {
   //concat in one file
     .pipe(concat(global.conf.fileName))
   //minify all libs
-    .pipe(minify({
-    ext: {
-      src: '-debug.js',
-      min: '.min.js'
-    }
-  }))
+  // .pipe(minify())
   //Src to output
     .pipe(gulp.dest(path.join(__dirname, 'public/dist/js/')))
 });
@@ -37,7 +32,11 @@ gulp.task('compile-index', function() {
     patterns: [
       {
         match: 'base_url',
-        replacement: global.url.BASE_URL
+        // replacement: global.conf.base_url
+        // replacement: global.url.BASE_URL
+        replacement: (global.enviroment == 'prod')
+          ? global.conf.base_url
+          : global.url.BASE_URL
       }, {
         match: 'output_file',
         replacement: global.conf.outputFile
@@ -62,24 +61,30 @@ gulp.task('compile-css', function() {
 
   /* Merge stream */
   var mergedStream = merge(lessStream, cssStream)
-//Concat all css
-  .pipe(concat('styles.min.css'))
+  //Concat all css
+    .pipe(concat('styles.min.css'))
   //minify
-  .pipe(minifyCss())
+    .pipe(minifyCss())
   //dest mergedStream
-  .pipe(gulp.dest(path.join(__dirname, 'public/dist/css')))
+    .pipe(gulp.dest(path.join(__dirname, 'public/dist/css')))
 });
 
 /* default task */
-gulp.task('default', ['compile-js', 'compile-index', 'compile-css'], function(){
+gulp.task('default', [
+  'compile-js', 'compile-index', 'compile-css'
+], function() {
   //REtunr watch
 });
-gulp.task('watch', ['compile-js', 'compile-index', 'compile-css'], function(){
+gulp.task('watch', [
+  'compile-js', 'compile-index', 'compile-css'
+], function() {
   //REtunr watch
 
-    gulp.watch([path.join(__dirname, 'public/src/css/*.less'), path.join(__dirname, 'public/src/css/*.css')], ['compile-css']);
-    gulp.watch(path.join(__dirname, 'public/index.dev.html'), ['compile-index']);
-    gulp.watch(path.join(__dirname, 'public/src/js/*.js'), ['compile-js']);
-
+  gulp.watch([
+    path.join(__dirname, 'public/src/css/*.less'),
+    path.join(__dirname, 'public/src/css/*.css')
+  ], ['compile-css']);
+  gulp.watch(path.join(__dirname, 'public/index.dev.html'), ['compile-index']);
+  gulp.watch(path.join(__dirname, 'public/src/js/*.js'), ['compile-js']);
 
 });
